@@ -1,7 +1,9 @@
+import os
+
 workers = 2
 worker_class = "gevent"
 # in development
-bind = "127.0.0.1:5000"
+bind = f"127.0.0.1:{os.getenv('VIHECULE_DOCKER_PORT')}"
 # in Dockerize
-#bind = "0.0.0.0:5000"
+#bind = f"0.0.0.0:{os.getenv('VIHECULE_DOCKER_PORT')}"
 reload = True
