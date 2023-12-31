@@ -29,5 +29,5 @@ $ docker run -p 5000:5000 vihecule-service
 
 ## License
 
-Email-Service is [MIT licensed](LICENSE).
+Vihecule-Service is [MIT licensed](LICENSE).
 
