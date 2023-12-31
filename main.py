@@ -2,9 +2,16 @@ from flask_app import app
 from flask import jsonify
 from crud.vihecule import (get_vihecules_c,create_vihecule_c,delete_vihecule_c,get_vihecule_by_id_c,
                            get_vihecules_by_client_id_c)
+#from flask_jwt_extended import  jwt_required, get_jwt_identity
+# Apply the @jwt_required() decorator globally
+from middlewares.authJWT import verify_token
+
+@app.before_request
+@verify_token
+def before_request():
+    pass
 
 
-##### Vihecyule
 @app.route('/vihecule', methods=['GET'])
 def get_vihecules():
     return get_vihecules_c()

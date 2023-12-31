@@ -5,3 +5,5 @@ flask_sqlalchemy
 gunicorn
 gevent
 mysql-connector-python
+flask_jwt_extended
+PyJWT
