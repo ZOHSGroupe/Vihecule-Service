@@ -44,7 +44,17 @@ $ docker run -p 5000:5000 vihecule-service
   - `genre`: String - Genre of the Vihecule.
   - `typeVihecule`: String - Type of the Vihecule.
   - `fuelType`: String - Fuel type of the Vihecule.
-  - ... (Other fields)
+  - `vehicleIdentificationNumber`: String - Vehicle Identification Number.
+  - `cylinderCount`: Integer - Number of cylinders.
+  - `taxIdentificationNumber`: String - Tax Identification Number.
+  - `taxHorsepower`: Integer - Tax Horsepower.
+  - `licensePlateNumber`: String - License Plate Number.
+  - `emptyWeight`: Float - Empty Weight of the Vihecule.
+  - `grossVehicleWeightRating`: Float - Gross Vehicle Weight Rating.
+  - `currentCarValue`: Float - Current Car Value.
+  - `manufacturingDate`: String (ISO format) - Manufacturing Date.
+  - `status`: String - Status of the Vihecule.
+  - `client_id`: String - ID of the associated client.
 - **Response:**
   - `201`: Vihecule created successfully.
   - `404`: Client not found (if the specified client_id does not exist).
