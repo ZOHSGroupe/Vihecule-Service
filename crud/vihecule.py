@@ -28,6 +28,7 @@ def get_vihecules_c():
                 'currentCarValue': vihecule.current_car_value,
                 'manufacturingDate': vihecule.manufacturing_date.isoformat() if vihecule.manufacturing_date else None,
                 'status': vihecule.status,
+                'numberOfPorts':vihecule.number_of_ports,
                 'dateCreation': vihecule.date_creation.isoformat() if vihecule.date_creation else None,
                 'client_id':vihecule.client_id
                 # Include other fields as needed

@@ -43,6 +43,7 @@ $ docker run -p 5000:5000 vihecule-service
   - `marque`: String - Brand of the Vihecule.
   - `genre`: String - Genre of the Vihecule.
   - `typeVihecule`: String - Type of the Vihecule.
+  - `numberOfPorts` : Integer - Number of ports.
   - `fuelType`: String - Fuel type of the Vihecule.
   - `vehicleIdentificationNumber`: String - Vehicle Identification Number.
   - `cylinderCount`: Integer - Number of cylinders.
