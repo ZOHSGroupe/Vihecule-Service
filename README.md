@@ -101,5 +101,5 @@ $ docker run -p 5000:5000 vihecule-service
 
 ## License
 
-Vihecule-Service is [MIT licensed](LICENSE).
+Vihecule-Service is [GPL licensed](LICENSE).
 
