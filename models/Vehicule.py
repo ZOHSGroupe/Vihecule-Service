@@ -5,13 +5,13 @@ from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 from models.client import Client
 #Base = declarative_base()
-class Vihecule(db.Model):
-    __tablename__ = 'vihecule'
+class Vehicule(db.Model):
+    __tablename__ = 'vehicule'
 
     id = Column(String, primary_key=True)
     marque = Column(String)
     genre = Column(String)
-    type_vihecule = Column(String)
+    type_vehicle = Column(String)
     fuel_type = Column(String)
     vehicle_identification_number = Column(String)
     cylinder_count = Column(String)
