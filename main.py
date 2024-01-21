@@ -6,10 +6,10 @@ from crud.vihecule import (get_vihecules_c,create_vihecule_c,delete_vihecule_c,g
 # Apply the @jwt_required() decorator globally
 from middlewares.authJWT import verify_token
 
-@app.before_request
-@verify_token
-def before_request():
-    pass
+# @app.before_request
+# @verify_token
+# def before_request():
+#     pass
 
 
 @app.route('/vihecule', methods=['GET'])

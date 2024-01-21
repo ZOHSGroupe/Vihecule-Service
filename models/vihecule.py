@@ -13,7 +13,7 @@ class Vihecule(db.Model):
     genre = Column(String)
     type_vehicule = Column(String)
     fuel_type = Column(String)
-    vehicle_identification_number = Column(String)
+    vehicule_identification_number = Column(String)
     cylinder_count = Column(Integer)
     tax_identification_number = Column(String)
     tax_horsepower = Column(String)
