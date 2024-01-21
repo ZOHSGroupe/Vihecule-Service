@@ -19,7 +19,7 @@ class Vihecule(db.Model):
     tax_horsepower = Column(String)
     license_plate_number = Column(String)
     empty_weight = Column(Float)
-    gross_vehicle_weight_rating = Column(Float)
+    gross_vehicule_weight_rating = Column(Float)
     current_car_value = Column(Float)
     manufacturing_date = Column(Date)
     status = Column(String)

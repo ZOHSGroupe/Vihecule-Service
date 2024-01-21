@@ -1,6 +1,6 @@
 ## Description
 
-Vihecule-Service is an Application Programming Interface (API) to add,delete,updateand get vihecule .
+Vehicule-Service is an Application Programming Interface (API) to add,delete,updateand get vehicule .
 ## Installation :
 ```bash
 # install requirements
@@ -14,80 +14,82 @@ $ gunicorn -c gunicorn_config.py main:app
 ## Build Docker image : 
 ```bash
 # build a docker image
-$ docker build -t vihecule-service .
+$ docker build -t vehicule-service .
 ```
 ## Running the app in the Docker : 
 ```bash
 # Run docker image
-$ docker run -p 5000:5000 vihecule-service
+$ docker run -p 5000:5000 vehicule-service
 ```
 
 
 ## Available Endpoints
 
-### 1. Get All Vihecules
+### 1. Get All Vehicules
 
-- **Endpoint:** `/vihecule`
+- **Endpoint:** `/vehicule`
 - **Method:** GET
-- **Description:** Retrieve a list of all Vihecules.
+- **Description:** Retrieve a list of all Vehicules.
 - **Response:**
-  - `200`: Successful retrieval with a list of Vihecules.
+  - `200`: Successful retrieval with a list of Vehicules.
   - `500`: Internal Server Error.
 
-### 2. Create Vihecule
+### 2. Create Vehicules
 
-- **Endpoint:** `/vihecule`
+- **Endpoint:** `/vehicule`
 - **Method:** POST
-- **Description:** Create a new Vihecule.
+- **Description:** Create a new Vehicule.
 - **Request Body:**
-  - `marque`: String - Brand of the Vihecule.
-  - `genre`: String - Genre of the Vihecule.
-  - `typeVihecule`: String - Type of the Vihecule.
+  - `marque`: String - Brand of the Vehicule.
+  - `genre`: String - Genre of the Vehicule.
+  - `typeVehicule`: String - Type of the Vehicule.
   - `numberOfPorts` : Integer - Number of ports.
-  - `fuelType`: String - Fuel type of the Vihecule.
-  - `vehicleIdentificationNumber`: String - Vehicle Identification Number.
+  - `fuelType`: String - Fuel type of the Vehicule.
+  - `vehiculeIdentificationNumber`: String - Vehicle Identification Number.
   - `cylinderCount`: Integer - Number of cylinders.
   - `taxIdentificationNumber`: String - Tax Identification Number.
   - `taxHorsepower`: Integer - Tax Horsepower.
   - `licensePlateNumber`: String - License Plate Number.
-  - `emptyWeight`: Float - Empty Weight of the Vihecule.
-  - `grossVehicleWeightRating`: Float - Gross Vehicle Weight Rating.
+  - `emptyWeight`: Float - Empty Weight of the Vehicule.
+  - `grossVehiculeWeightRating`: Float - Gross Vehicle Weight Rating.
   - `currentCarValue`: Float - Current Car Value.
   - `manufacturingDate`: String (ISO format) - Manufacturing Date.
-  - `status`: String - Status of the Vihecule.
+  - `status`: String - Status of the Vehicule.
   - `client_id`: String - ID of the associated client.
+  - `number_of_ports` : Int - Number of ports.
 - **Response:**
-  - `201`: Vihecule created successfully.
+  - `201`: Vehicule created successfully.
   - `404`: Client not found (if the specified client_id does not exist).
   - `500`: Internal Server Error.
 
-### 3. Delete Vihecule by ID
+### 3. Delete Vehicule by ID
 
-- **Endpoint:** `/vihecule/<string:vihecule_id>`
+- **Endpoint:** `/vehicule/<string:vehicule_id>`
 - **Method:** DELETE
-- **Description:** Delete a Vihecule by ID.
+- **Description:** Delete a Vehicule by ID.
 - **Response:**
-  - `200`: Vihecule deleted successfully.
-  - `404`: Vihecule not found.
+  - `200`: Vehicule deleted successfully.
+  - `404`: Vehicule not found.
   - `500`: Internal Server Error.
 
-### 4. Get Vihecule by ID
+### 4. Get Vehicule by ID
 
-- **Endpoint:** `/vihecule/<string:vihecule_id>`
+- **Endpoint:** `/vehicule/<string:vehicule_id>`
 - **Method:** GET
-- **Description:** Retrieve a Vihecule by ID.
+- **Description:** Retrieve a Vehicule by ID.
 - **Response:**
-  - `200`: Successful retrieval with Vihecule details.
-  - `404`: Vihecule not found.
+  - `200`: Successful retrieval with Vehicule details.
+  - `404`: Vehicule not found.
   - `500`: Internal Server Error.
 
 ### 5. Get Vihecules by Client ID
 
-- **Endpoint:** `/vihecule/client/<string:client_id>`
+- **Endpoint:** `/vehicule/client/<string:client_id>`
 - **Method:** GET
-- **Description:** Retrieve a list of Vihecules associated with a specific client.
+- **Description:** Retrieve a list of Vehicules associated with a specific client.
 - **Response:**
-  - `200`: Successful retrieval with a list of Vihecules.
+  - `200`: Successful retrieval with a list of Vehicules.
+  - `404`: Client NOT FOUND with "client_id".
   - `500`: Internal Server Error.
 
 
@@ -102,5 +104,5 @@ $ docker run -p 5000:5000 vihecule-service
 
 ## License
 
-Vihecule-Service is [GPL licensed](LICENSE).
+Vehicule-Service is [GPL licensed](LICENSE).
 
