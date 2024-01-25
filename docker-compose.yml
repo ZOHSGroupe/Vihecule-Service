@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "${MYSQL_LOCAL_PORT}:${MYSQL_DOCKER_PORT}"
+    environment:
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  flask_app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${MYSQL_LOCAL_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=mysql
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+  eureka_server:
+    image: netflixoss/eureka
+    ports:
+      - "8761:8761"
+    environment:
+      - JAVA_OPTS=-Xmx512m -Xms512m
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
