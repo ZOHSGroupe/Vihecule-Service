@@ -27,15 +27,23 @@ services:
       - mysql
     links:
       - mysql
+  
 
-  eureka_server:
-    image: netflixoss/eureka
+  discovery-service:
+      image: eureka:latest
+      container_name: eureka
+      ports:
+        - "8761:8761"
+
+
+      
+  API-GATEWAY-SERVICE:
+    image: api-gateway:latest
+    container_name: api-gateway
     ports:
-      - "8761:8761"
-    environment:
-      - JAVA_OPTS=-Xmx512m -Xms512m
+      - "8081:8081"
     depends_on:
-      - mysql
-
+      - discovery-service
+      - flask_app
 volumes:
   mysql-data:
