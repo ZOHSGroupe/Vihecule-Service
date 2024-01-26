@@ -76,7 +76,7 @@ def create_vihecule_c():
         db.session.add(new_vihecule)
         db.session.commit()
 
-        return jsonify({"message":f"Vehicule added successufully with id {id_}"}), 201  # 201 Created
+        return jsonify({"id":f"{id_}"}), 201  # 201 Created
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500  # 500 Internal Server Error
